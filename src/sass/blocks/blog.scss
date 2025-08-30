@@ -1,0 +1,115 @@
+@use '/src/sass/base/variables.scss' as *;
+
+.blog{
+    padding-top: 60px;
+    &__wrapper{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    &__card{
+        width: 100%;
+        max-width: 400px;
+        border: 1px solid $dark;
+        &-img{
+            position: relative;
+            height: 240px;
+            width: 100%;
+            max-width: 402px;
+            img{
+                position: absolute;
+                top: -1px;
+                left: -1px;
+                min-inline-size: calc(100% + 2px);
+                height: 240px;
+                object-fit: cover;
+            }
+        }
+        &_btn{
+            padding: 25px 25px 0 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        &-title{
+            font-size: 24px;
+            text-align: left;
+        }
+        &-text{
+            padding: 25px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .blog{
+        &__wrapper{
+            position: relative;
+            padding: 25px 25px 0 25px;
+            &::before, &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 1px;
+                background: #000;
+            }
+            &::after{
+                transform: rotate(90deg);
+                top: 100px;
+                left: -100px;
+            }
+        }
+        &__card{
+            max-width: 670px;
+            &_top{
+                display: flex;
+            }
+            &-img{
+                max-width: 50%;
+            }
+            &_btn{
+                width: 50%;
+                justify-content: space-between;
+            }
+            &-text{
+                padding-top: 15px;
+            }
+        }
+        
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .blog{
+        &__wrapper{
+            justify-content: start;
+            align-items: start;
+            gap: 25px 50px;
+        }
+        &__card{
+            max-width: 520px;
+        }
+    }
+}
+
+
+
+@media screen and (min-width: 1920px) {
+    .blog{
+        padding-top: 100px;
+        &__wrapper{
+            align-items: normal;
+        }
+        &__card{
+            max-width: 670px;
+        }
+    }
+}

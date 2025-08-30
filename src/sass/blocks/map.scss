@@ -1,0 +1,36 @@
+.map{
+    padding-top: 60px;
+    &__block{
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        iframe{
+            display: block;
+            width: 100%;
+            aspect-ratio: 663 / 400;
+            max-width: 663px;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .map{
+        &__block{
+            iframe{
+                aspect-ratio: 801 / 604;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px){
+    .map{
+        &__block{
+            iframe{
+                aspect-ratio: 801 / 604;
+                max-width: 801px;
+            }
+        }
+    }
+}

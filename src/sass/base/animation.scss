@@ -1,0 +1,29 @@
+//promo .promo__cta 1200px
+@keyframes slideIn {
+    from{ //0%
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to{ //100%
+        transform: translateX(0%);
+        opacity: 1;
+    }
+} 
+
+@keyframes slideAbsolut {
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulseVase {
+    0%{ transform: scale(1);}
+    20%{ transform: scale(0.9) translateY(4.25px);}
+    40%{ transform: scale(1.1) translateY(-4.25px);}
+    60%{ transform: scale(1) translateY(0);}
+    80%{ transform: scale(1.05) translateY(-2px);}
+    100%{ transform: scale(1) translateY(0);}
+}

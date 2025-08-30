@@ -1,0 +1,175 @@
+@use '/src/sass/base/variables.scss' as *;
+@use '/src/sass/ui/titles.scss' as *;
+
+.footer{
+    margin-top: 60px;
+    padding: 50px 0;
+    background: $dark;
+    color: $light;
+    a{
+        color: $light;
+    }
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+    }
+    &__news{
+        display: flex;
+        flex-wrap: wrap;
+        width: 295px;
+        &-text{
+            margin-top: 40px;
+            font-weight: 400;
+            font-size: 16px;
+        }
+        &-email{
+            position: relative;
+            margin-top: 40px;
+            width: 295px;
+            height: 32px;
+            border: none;
+            border-bottom: 1px solid $ui-active;
+            background: transparent;
+            color: $light;
+            &::placeholder{
+                position: absolute;
+                top: 0;
+                font-weight: 400;
+                font-size: 14px;
+            }
+            &:active, &:focus, &:hover, &:focus-visible{
+                border: none;
+                outline: none;
+                border-bottom: 1px solid $ui-active;
+            }
+        }
+        &-check{
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            color: $light;
+        }
+        &-checkbox{
+            margin-right: 15px;
+            accent-color: $dark;
+            border: 1px solid var(--light);
+            border-radius: 2px;
+            width: 15px;
+            height: 15px;
+        }
+        &-link{
+            margin-left: 5px;
+            color: #a22dc6 !important;
+        }
+        &-btn{
+            margin-top: 20px;
+        }
+    }
+    &__info{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 66px;
+        ul{
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+        &-list{
+            font-weight: 400;
+            font-size: 16px;
+        }
+        &-link{
+            display: inline-block;
+            position: relative;
+            &::after{
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: -4px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: $light;
+                width: 0;
+                height: 2px;
+                transition: 0.3s all;
+            }
+            &:hover{
+                &::after{
+                    content: '';
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &__social{
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        width: 94px;
+        &-icons{
+            display: flex;
+            column-gap: 10px;
+        }
+        &-icon{
+            display: block;
+            font-size: 24px;
+            &::before{
+                margin: 0;
+            }
+            &:hover{
+                transition: 0.3s all;
+                color: $ceramic;
+                font-size: 26px;
+            }
+        }
+    }
+    &-end{
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .just-validate-error-field{
+        border-bottom: 1px solid $ui-error;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus {
+        -webkit-text-fill-color: $light;
+        -webkit-box-shadow: 0 0 0px 1000px #232323 inset;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $ui-active;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .footer{
+        &__wrapper{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .footer{
+        &-end{
+            margin-top: 50px;
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .footer{
+        margin-top: 100px;
+        &-end{
+            margin-top: 20px;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+@use '/src/sass/base/variables.scss' as *;
+
+.touch{
+    padding-top: 60px;
+    &__img{
+        display: none;
+    }
+    &__wrapper{
+        margin-top: 60px;
+        position: relative;
+    }
+    &__fieldset{
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    &__label{
+        display: block;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 200%;
+        color: $dark;
+        &:nth-child(2){
+            margin-top: 8px;
+        }
+    }
+    &__input, textarea{
+        border: 1px solid #e2e1e5;
+        border-radius: 2px;
+        padding: 10px 15px;
+        width: 100%;
+        height: 48px;
+        ///
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 200%;
+        color: $dark;
+        &:focus,&:hover{
+            border: none;
+            outline: 1px solid $dark;
+        }
+        &::placeholder{
+            color: $ui-disabled;
+        }
+    }
+    textarea{
+        height: 132px;
+        resize: none;
+    }
+    //
+    &__label-check{
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+    }
+    &__checkbox{
+        margin-right: 15px;
+        border: 1px solid var(--dark);
+        border-radius: 2px;
+        width: 15px;
+        height: 15px;
+        accent-color: $dark;
+        &-link{
+            color: #a22dc6;
+            margin-left: 5px;
+        }
+    }
+    &__btn{
+        margin-top: 20px;
+    }
+    &__vase{
+        display: none;
+    }
+    .just-validate-error-field{
+        border: 1px solid $ui-error;
+        outline: none;
+        &:hover{
+            border: 1px solid $ui-error;
+            outline: none;
+        }
+    }
+    
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $dark;
+        -webkit-box-shadow: 0 0 0px 40rem #ffff inset;
+        border: 1px solid #e2e1e5;
+        outline: none;
+    }
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus{
+        border: none;
+        outline: 1px solid $dark;
+        
+    }
+}
+
+@media screen and (min-width: 768px){
+    .touch{
+        &__wrapper{
+            margin-top: 45px;
+        }
+        form{
+            padding-left: 24px;
+        }
+        &__label, &__input, textarea{
+            width: 300px;
+        }
+        &__vase{
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            display: block;
+            animation: pulseVase 2s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: infinite;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .touch{
+        &__wrapper{
+            margin-top: 80px;
+        }
+        &__img{
+            display: block;
+        }
+        form{
+            padding-left: 40px;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1920px){
+    .touch{
+        padding-top: 100px;
+        form{
+            padding-left: 147px;
+        }
+        &__fieldset{
+            display: flex;
+            column-gap: 45px;
+        }
+        &__vase{
+            right: 75px;
+        }
+    }
+}
